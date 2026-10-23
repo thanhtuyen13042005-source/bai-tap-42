@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài TK5 - Accordion Đơn Giản</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .accordion-header-custom {
+            background-color: #0d6efd;
+            color: white;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            background-color: #f1f1f1;
+            border-radius: 0 0 5px 5px;
+            padding: 0 20px;
+        }
+        .accordion-content.active {
+            max-height: 200px;
+            padding: 15px 20px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container my-5" style="max-width: 600px;">
+        <a href="42.html" class="btn btn-secondary mb-3">&larr; Quay lại Trang chủ</a>
+        <div class="card shadow p-4">
+            <h3 class="text-primary mb-3">Bài TK5: Accordion đơn giản</h3>
+            
+            <div class="accordion-header-custom" id="accToggle">Bấm vào đây để xem nội dung ẩn</div>
+            <div class="accordion-content" id="accContent">
+                <p class="mb-0">Đây là phần nội dung được ẩn/hiện mượt mà bằng cách kết hợp JavaScript (`classList.toggle`) và hiệu ứng chuyển động `max-height` trong CSS.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('accToggle');
+        const content = document.getElementById('accContent');
+
+        toggleBtn.addEventListener('click', function() {
+            content.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
