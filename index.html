@@ -3,111 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ứng Dụng Quản Lý Tài Chính Cá Nhân - EG07</title>
-    <!-- Bootstrap 5 CSS -->
+    <title>Trang Chủ Bài Tập 42 - Nguyễn Thanh Tuyến</title>
+    <!-- Thêm thư viện Bootstrap để trang web đẹp và chuyên nghiệp hơn -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-light">
 
-    <div class="container py-5">
-        <!-- Header & Thông tin sinh viên -->
-        <header class="text-center mb-5">
-            <!-- Hình ảnh đã được nén qua TinyPNG theo yêu cầu -->
-            <img src="images/logo.png" alt="Logo" class="mb-3 rounded-circle shadow-sm" width="70" height="70">
-            <h1 class="fw-bold text-primary">QUẢN LÝ TÀI CHÍNH CÁ NHÂN</h1>
-            <p class="text-muted mb-2">Mã đề: EG07 | Sinh viên: <strong>Nguyễn Thanh Tuyến</strong></p>
-            
-            <!-- Link bài tập trước đó (Bài 40, 41, 42) -->
-            <div class="mb-3">
-                <a href="https://thanhtuyen13042005-source.github.io/bai-tap-42/42.html" target="_blank" class="btn btn-sm btn-outline-secondary">
-                    🔗 Xem kết quả Bài 40, 41, 42 (GitHub Pages)
-                </a>
-            </div>
+    <!-- Phần tiêu đề và thông tin cá nhân -->
+    <div class="container my-5">
+        <div class="text-center p-5 bg-white shadow rounded">
+            <h1 class="display-6 fw-bold text-primary">BÀI TẬP 42 - JAVASCRIPT LTW</h1>
+            <p class="text-muted mb-2">Giảng viên hướng dẫn: TanNQ</p>
             <hr class="w-25 mx-auto">
-        </header>
+            <h3 class="h4 text-dark mt-3">Họ và tên sinh viên: <strong>Nguyễn Thanh Tuyến</strong></h3>
+        </div>
 
-        <div class="row g-4">
-            <!-- Cột trái: Tổng quan & Form thêm giao dịch -->
-            <div class="col-lg-4">
-                <!-- Thẻ Tổng quan Tài chính (Bài 1) -->
-                <div class="card shadow-sm mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title text-secondary mb-3">Tổng Quan Tài Chính</h5>
-                        <div class="mb-2">Số dư hiện tại: <h3 id="totalBalance" class="fw-bold text-primary mb-0">0 đ</h3></div>
-                        <div class="d-flex justify-content-between text-muted small mt-3">
-                            <span>Tổng Thu: <strong id="totalIncome" class="text-success">0 đ</strong></span>
-                            <span>Tổng Chi: <strong id="totalExpense" class="text-danger">0 đ</strong></span>
-                        </div>
-                        <!-- Thanh tiến trình Progress Bar tóm tắt thu chi (Bài 3) -->
-                        <div class="mt-3">
-                            <label class="small text-muted mb-1">Tỷ lệ Thu / Chi</label>
-                            <div class="progress" style="height: 10px;">
-                                <div id="incomeProgress" class="progress-bar bg-success" role="progressbar" style="width: 50%;"></div>
-                                <div id="expenseProgress" class="progress-bar bg-danger" role="progressbar" style="width: 50%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Form Thêm Giao Dịch (Bài 2 & Bài 4) -->
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title text-secondary mb-3">Thêm Giao Dịch Mới</h5>
-                        <form id="transactionForm" onsubmit="addTransaction(event)">
-                            <div class="mb-3">
-                                <label class="form-label">Loại giao dịch</label>
-                                <select id="type" class="form-select">
-                                    <option value="income">Khoản Thu (+)</option>
-                                    <option value="expense">Khoản Chi (-)</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Mô tả / Danh mục</label>
-                                <input type="text" id="description" class="form-control" placeholder="Ví dụ: Tiền lương, ăn uống...">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Số tiền (VNĐ)</label>
-                                <input type="number" id="amount" class="form-control" placeholder="Nhập số tiền > 0">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Ngày tháng</label>
-                                <input type="date" id="date" class="form-control">
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Thêm Giao Dịch</button>
-                        </form>
-                    </div>
+        <!-- Menu trỏ đến 6 bài tập -->
+        <h3 class="text-center my-4 text-secondary">Danh Sách Bài Tập Thực Hành</h3>
+        <div class="row g-4 justify-content-center">
+            
+            <!-- Nhóm TK -->
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center p-3 h-100">
+                    <h5 class="card-title text-primary">Bài TK5</h5>
+                    <p class="card-text text-muted">Accordion đơn giản</p>
+                    <a href="tk5.html" class="btn btn-outline-primary mt-auto">Xem Kết Quả</a>
                 </div>
             </div>
 
-            <!-- Cột phải: Bảng lịch sử giao dịch (Bài 1) -->
-            <div class="col-lg-8">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body">
-                        <h5 class="card-title text-secondary mb-3">Lịch Sử Giao Dịch</h5>
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle">
-                                <thead class="table-light">
-                                    <tr>
-                                        <th>Ngày</th>
-                                        <th>Mô tả</th>
-                                        <th>Loại</th>
-                                        <th>Số tiền</th>
-                                        <th>Hành động</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="transactionTableBody">
-                                    <!-- Dữ liệu render động bằng JS -->
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center p-3 h-100">
+                    <h5 class="card-title text-primary">Bài TK7</h5>
+                    <p class="card-text text-muted">Tạo chuỗi ngẫu nhiên</p>
+                    <a href="tk7.html" class="btn btn-outline-primary mt-auto">Xem Kết Quả</a>
                 </div>
             </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center p-3 h-100">
+                    <h5 class="card-title text-primary">Bài TK8</h5>
+                    <p class="card-text text-muted">Chuyển đổi màu Hex sang RGB</p>
+                    <a href="tk8.html" class="btn btn-outline-primary mt-auto">Xem Kết Quả</a>
+                </div>
+            </div>
+
+            <!-- Nhóm K -->
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center p-3 h-100">
+                    <h5 class="card-title text-success">Bài K4</h5>
+                    <p class="card-text text-muted">Bài tập thực hành K4</p>
+                    <a href="k4.html" class="btn btn-outline-success mt-auto">Xem Kết Quả</a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center p-3 h-100">
+                    <h5 class="card-title text-success">Bài K6</h5>
+                    <p class="card-text text-muted">Bài tập thực hành K6</p>
+                    <a href="k6.html" class="btn btn-outline-success mt-auto">Xem Kết Quả</a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center p-3 h-100">
+                    <h5 class="card-title text-success">Bài K8</h5>
+                    <p class="card-text text-muted">Bài tập thực hành K8</p>
+                    <a href="k8.html" class="btn btn-outline-success mt-auto">Xem Kết Quả</a>
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <!-- Script logic -->
-    <script src="app.js"></script>
+    <!-- Footer -->
+    <footer class="text-center py-4 text-muted">
+        <p>© 2026 - Thực hiện bởi Nguyễn Thanh Tuyến</p>
+    </footer>
+
 </body>
 </html>
